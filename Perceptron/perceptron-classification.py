@@ -45,7 +45,7 @@ for i in range(epochs):
         # Plot Data
         ax.clear()
         x, y = np.meshgrid(x_range, y_range)
-        z = x * W[0] + y * W[1]
+        z = x * W[0] + y * W[1] + b
         ax.plot_surface(x, y, z, rstride=1, cstride=1, alpha = 0.4)
         ax.scatter(X_train[Y_train == 1,0], X_train[Y_train == 1,1], Y_train[Y_train == 1], c='r', marker='o')
         ax.scatter(X_train[Y_train == -1,0], X_train[Y_train == -1,1], Y_train[Y_train == -1], c='g', marker='o')

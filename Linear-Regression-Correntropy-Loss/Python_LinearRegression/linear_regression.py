@@ -1,8 +1,7 @@
 import numpy as np
-import numpy.matlib
 import pandas as pd
 from matplotlib import pyplot as plt
-import random
+
 
 # Read data
 X = np.array(pd.read_csv('regressionOutliers.csv', skiprows = 1, header = None))
@@ -25,7 +24,7 @@ fig, ax1 = plt.subplots()
 for k in range(iteration):
     
     e = Y - np.matmul(X, W)
-    μ = np.exp(-η * e ** 2);
+    μ = np.exp(-η * e ** 2)
     
     R = np.matmul(X.T , X * μ)
     P = np.matmul(X.T , Y * μ)
